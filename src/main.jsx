@@ -10,12 +10,14 @@ import CountryDetail from './views/country/Detail.jsx'
 const root = document.getElementById('root')
 
 createRoot(root).render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />}>
-        <Route index element={<Country />} />
-        <Route path=":country" element={<CountryDetail />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>,
+  <StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<Country />} />
+          <Route path=":country" element={<CountryDetail />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </StrictMode>,
 )
