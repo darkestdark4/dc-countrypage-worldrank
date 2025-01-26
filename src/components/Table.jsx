@@ -1,3 +1,5 @@
+import formatNumber from "../utils/formatNumber"
+
 export default function Table({ header, data }) {
   return (
     <>
@@ -13,9 +15,12 @@ export default function Table({ header, data }) {
               <td>
                 <img className="country-logo" src={item.flag} alt="" />
               </td>
-              <td>{item.name}</td>
-              <td>{item.population}</td>
-              <td>{item.area}</td>
+              <td>
+                
+                {item.name}
+              </td>
+              <td>{formatNumber(item.population)}</td>
+              <td>{formatNumber(item.area)}</td>
               <td>{item.region}</td>
             </tr>
           ))}
