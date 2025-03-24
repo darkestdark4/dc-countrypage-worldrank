@@ -80,6 +80,7 @@ export default function Country() {
         population: item.population,
         area: item.area,
         region: item.region,
+        subregion: item.subregion ?? null,
         unMember: item.unMember,
         independent: item.independent
       }))
@@ -94,8 +95,12 @@ export default function Country() {
     fetchCountries()
   }, [])
 
-  // Search by name
-  let filterCountries = countries.filter(country => country.name.toLowerCase().includes(search.toLowerCase()))
+  // Search by name, region or subregion
+  let filterCountries = countries.filter(country => {
+    return country.name.toLowerCase().includes(search.toLowerCase()) ||
+      country.region.toLowerCase().includes(search.toLowerCase()) ||
+      country.subregion?.toLowerCase().includes(search.toLowerCase())
+  })
 
   // Sort by name, population and area
   if(sort !== undefined) {
@@ -134,11 +139,10 @@ export default function Country() {
         <div className="card">
           <div className="card-header">
             <div className="card-title">
-              <p>Found 100 countries</p>
+              <p>Found {filterCountries.length} countries</p>
             </div>
             <div className="card-form">
               <FormInputLogo
-                width="300px"
                 logo={SearchLogo}
                 placeholder="Search by Name, Region, Subregion"
                 onChange={e => setSearch(e.target.value)}
