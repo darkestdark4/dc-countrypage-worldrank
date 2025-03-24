@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  background: #1B1D1F;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#root {
+  width: 100%;
+}
+
+#container {
+  width: 100%;
+}
+
+#header {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  position: relative;
+  z-index: 0;
+  align-items: center;
+  justify-content: center;
+  background: url('./assets/header.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#body {
+  position: relative;
+  z-index: 10;
+  top: -4rem;
+}
+
+#body.main-content {
+  padding: 0 4rem;
+}
+
+#body.detail-content {
+  padding: 0 20rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.detail-content .card {
+  padding: 1.5rem 0;
+}
+
+.card {
+  border: 1px solid #282B30;
+  border-radius: 10px;
+  min-height: 50px;
+  background: #1B1D1F;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.card .card-body {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.card .card-flag-banner {
+  display: flex;
+  position: relative;
+  top: -4rem;
+  justify-content: center;
+}
+
+.card .card-flag-banner img {
+  border-radius: 10px;
+  width: 230px;
+  height: 150px;
+}
+
+.card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.card .card-header .card-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #D2D5DA;
+}
+
+.card .card-header .card-form {
+  width: 350px;
+}
+
+.card .card-body .card-filter {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 27.5%;
+}
+
+.card .card-body .card-content {
+  flex-grow: 4;
+  width: 100%;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input-icon {
+  padding: 0 1rem;
+  display: flex;
+  border-radius: 10px;
+  background: #282B30;
+}
+
+.form-input label,
+.form-input-icon label {
+  color: #D2D5DA;
+  font-size: .75rem;
+  font-weight: 500;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  margin-bottom: .75rem;
+}
+
+select {
+  width: 100%;
+  border: 2px solid #282B30;
+  border-radius: 10px;
+  padding: .875rem;
+  background: #1B1D1F;
+  color: #D2D5DA;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: .875rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select-form select {
+  overflow: hidden;
+  background: url("./assets/expand-down.svg") no-repeat 95% 50% #1B1D1F;
+}
+
+label.checkbox {
+  display: block;
+  position: relative;
+  color: #D2D5DA;
+  padding-left: 35px;
+  padding-top: 3px;
+  margin-bottom: 20px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: .875rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+label.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+label.checkbox .checkbox-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #1B1D1F;
+  border: 2px solid #D2D5DA;
+  border-radius: 5px;
+}
+
+label.checkbox:hover input ~ .checkbox-box {
+  background-color: #282B30;
+}
+
+label.checkbox input:checked ~ .checkbox-box {
+  background-color: #2196F3;
+  border: 2px solid #2196F3;
+}
+
+.checkbox-box:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+label.checkbox input:checked ~ .checkbox-box:after {
+  display: block;
+}
+
+label.checkbox .checkbox-box:after {
+  left: 7.5px;
+  top: 2px;
+  width: 3px;
+  height: 11px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+} 
+
+.chip-label {
+  border-radius: 10px;
+  padding: .5rem .75rem;
+  transition: all 0.2s ease;
+  color: #D2D5DA;
+}
+
+.chip-label label {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: .875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+input[type="checkbox"].chip-box {
+  display: none;
+}
+
+input[type="checkbox"]:checked.chip-box + .chip-label {
+  background: #282B30;
+}
+
+input[type="checkbox"]:checked.chip-box + .chip-label label {
+  color: #D2D5DA;
+}
+
+input[type="checkbox"]:checked.chip-box + .chip-label label:before {
+  background: #282B30;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 1rem .75rem;
+  border: 0;
+  border-radius: 10px;
+  background: #282B30;
+  color: #D2D5DA;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: .875rem;
+}
+
+input[type=text]:focus, select:focus {
+  outline: none;
+}
+
+input[type=text]::placeholder {
+  color: #D2D5DA;
+}
+
+table {
+  width: 100%;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: #D2D5DA;
+  font-weight: 500;
+  border-collapse: collapse;
+}
+
+table thead {
+  font-size: .75rem;
+  border-bottom: 2px solid #282B30;
+}
+
+table thead tr td {
+  padding-bottom: 1rem;
+}
+
+table tbody tr td {
+  padding: 1rem 0 .25rem 0;
+  font-size: .875rem;
+}
+
+table tbody tr td img.country-logo {
+  width: 55px;
+  height: 35px;
+  border-radius: 5px;
+}
+
+.country-title {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: #D2D5DA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -4rem;
+}
+
+.country-title h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.country-title p {
+  font-size: .875rem;
+  font-weight: 500;
+  margin-top: .25rem;
+}
+
+.country-population-area {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: #D2D5DA;
+  font-size: .875rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.country-population-area .info {
+  background: #282B30;
+  padding: .5rem 1rem;
+  display: flex;
+  border-radius: 10px;
+}
+
+.country-population-area .info p {
+  padding: .5rem;
+}
+
+.country-population-area .info .divider {
+  border-left: 1px solid #1B1D1F;
+  margin: 0 1rem;
+}
+
+.country-detail-info {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: #D2D5DA;
+  font-size: .875rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+
+.country-detail-info div {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #282B30;
+}
+
+.country-detail-info div:last-child {
+  border-bottom: 1px solid #282B30;
+}
+
+.country-neighbour {
+  padding: 0 2rem;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: #D2D5DA;
+  font-size: .875rem;
+}
+
+.country-neighbour .list-countries {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.country-neighbour .list-countries div {
+  width: 75px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.country-neighbour .list-countries div img {
+  border-radius: 5px;
+  width: 75px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.country-neighbour .list-countries div p {
+  font-size: .75rem;
+  margin-top: .25rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: .75rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.pagination .item {
+  color: white;
+  font-size: .75rem;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background-color: #282B30;
+  min-width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .75rem;
+}
+
+.pagination .item:hover {
+  background-color: #6C727F;
+}
+
+.pagination .item.active {
+  background-color: #6C727F;
+}
+
+@media screen and (max-width: 768px) {
+  #body.main-content {
+    padding: 0 2rem;
+  }
+
+  #body.detail-content {
+    padding: 0 2rem;
+  }
+
+  .card .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: hidden;
+  }
+
+  .card .card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    font-family: 'Be Vietnam Pro', sans-serif;
+  }
+
+  .card .card-header .card-form {
+    width: auto;
+  }
+  
+  .datatable {
+    overflow: auto;
+  }
+
+  table {
+    overflow-x: scroll;
+  }
+
+  table tbody tr td {
+    padding: 1rem 1rem .25rem 0;
+  }
+
+  .pagination {
+    gap: .5rem;
+  }
+
+  .pagination .item {
+    padding: .5rem;
+  }
+
+  .country-population-area {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 3rem;
+  }
+
+  .country-population-area .info {
+    padding: .75rem;
+    justify-content: center;
+  }
+
+  .country-neighbour .list-countries {
+    flex-wrap: wrap;
+  }
+}
